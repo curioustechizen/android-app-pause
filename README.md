@@ -31,3 +31,6 @@ In some cases, it may not possible for you to extend `AbstractAppPauseActivity`.
 Just remember that you need to perform these steps in __every `Activity` in your app__.
 
 
+###Why is this a Library Project?
+Well, it doesn't _have_ to be. The library could just as well have been made into a .jar file that you can include in the libs/ folder of your app. I decided to make it an Android Library project to keep room for future enhancements. Also, I really don't like the idea of making a regular Java project and adding `android.jar` as a dependency in order to make it compile.
+
