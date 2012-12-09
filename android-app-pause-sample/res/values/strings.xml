@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidAppPauseSample</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="app_pause">App has paused</string>
+    <string name="app_resume">App has resumed</string>
+    <string name="btn_next">Next Activity</string>
+    <string name="activity_main">Main Activity</string>
+    <string name="activity_settings">Settings Activity</string>
+    <string name="activity_detail">Details Activity</string>
+
+</resources>
