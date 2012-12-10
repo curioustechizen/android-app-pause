@@ -12,12 +12,31 @@ Along similar lines,
 For more details about why these definitions were chosen, take a look at [this blog post](http://curioustechizen.blogspot.in/2012/12/android-application-level-pause-and.html).
 
 
-###Usage
+###When to Use
 
-To use this library, follow these steps:
+This library is useful when your app has several `Activity`s and you wish to stop or pause certain "app-wide" background tasks when your app as a whole "goes into the background". There are some background tasks that you would want to keep running as long as user is interacting with your app. However, when user is no longer actively interacting with your app, you would wish to stop/pause these background tasks. 
 
- 1. Extend `AbstractAppActiveService` and override the methods `onAppPause()` and `onAppResume()`. Typically, you would want to perform tasks like clearing scheduled Alarms, stopping HTTP communication, unregistering from broadcasts, stop monitoring the battery and the like in `onAppPause()` and reverse the actions in `onAppResume()`.
- - For every Activity in your app, extend `AbstractAppPauseActivity`, instead of `android.app.Activity`. Override the `getAppActiveServiceClass()` and return the class you created in Step 1.
+Typical actions you might want to perform when you app "pauses" are:
+ 
+ - Clearing scheduled Alarms,.
+ - Stopping HTTP communication. 
+ - Unregistering from broadcasts.
+ - Stop monitoring the battery
+ -  ... and the like
+
+Similarly, you would want to reverse these actions as soon as your app "returns to the foreground".
+
+Note that this library is _not_ useful if your app has just a single `Activity` or two. In such cases, you could use the `Activity` life-cycle methods `onPause()` and `onResume()` to start/stop background tasks.
+
+###How to Use
+
+`android-app-pause` is provided as an Android Library project. To use it, follow these steps:
+
+ 1. Add `android-app-pause` as a dependent library to your Android Application Project.
+ - Extend `AbstractAppActiveService` and override the methods `onAppPause()` and `onAppResume()`.
+ - For every Activity in your app: 
+   - Extend `AbstractAppPauseActivity`, instead of `android.app.Activity`. 
+   - Override the `getAppActiveServiceClass()` and return the class you created in Step 1.
 
 Check out the sample project to see how it is used.
 
