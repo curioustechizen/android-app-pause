@@ -53,5 +53,9 @@ public abstract class AbstractAppPauseActivity extends Activity {
         }
     }
     
+    /**
+     * This method must be overridden to return the class of your implementation of {@link AbstractAppActiveService}.
+     * @return the class of your app implementation of {@code AbstractAppActiveService}
+     */
     protected abstract Class<? extends AbstractAppActiveService> getAppActiveServiceClass();
 }
