@@ -52,3 +52,20 @@ Just remember that you need to perform these steps in __every `Activity` in your
 ###Why is this a Library Project?
 Well, it doesn't _have_ to be. The library could just as well have been made into a .jar file that you can include in the libs/ folder of your app. I decided to make it an Android Library project to keep room for future enhancements. Also, I really don't like the idea of making a regular Java project and adding `android.jar` as a dependency in order to make it compile.
 
+
+###License
+
+ 
+	Copyright 2013 Kiran Rao
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+	   http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
