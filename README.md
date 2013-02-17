@@ -11,6 +11,8 @@ Along similar lines,
 
 For more details about why these definitions were chosen, take a look at [this blog post](http://curioustechizen.blogspot.in/2012/12/android-application-level-pause-and.html).
 
+Note that when a user is using your app, if the device orientation is changed, the user can be considered to be continuing viewing your app. Thus, in general, device orientation changes should **not** be treated as app pause events.
+
 
 ###When to Use
 
@@ -33,19 +35,16 @@ Note that this library is _not_ useful if your app has just a single `Activity` 
 `android-app-pause` is provided as an Android Library project. To use it, follow these steps:
 
  1. Add `android-app-pause` as a dependent library to your Android Application Project.
- - Extend `AbstractAppActiveService` and override the methods `onAppPause()` and `onAppResume()`.
+ - Extend `AbstractAppPauseApplication` and override the methods `onAppPause()` and `onAppResume()`.
  - For every Activity in your app: 
    - Extend `AbstractAppPauseActivity`, instead of `android.app.Activity`. 
-   - Override the `getAppActiveServiceClass()` and return the class you created in Step 1.
+   - (Optional): If you want device rotations to trigger app pauses, call `setTreatRotationAsAppPause` with a value of `true`.
 
 Check out the sample project to see how it is used.
 
 
 ####Note:
-In some cases, it may not possible for you to extend `AbstractAppPauseActivity`. This could happen if you are already inheriting from some other base Activity like one of the Sherlock* Activities from ActionBar Sherlock. In such cases, you can replicate the functionality of `AbstractAppPauseActivity` in your Activities. Take a look at the source for `AbstractAppPauseActivity`. All it does is:
-
- 1. Bind your implementation of `AbstractAppActiveService` in `onStart()`,
- - Unbind it in `onStop()`.
+In some cases, it may not possible for you to extend `AbstractAppPauseActivity`. This could happen if you are already inheriting from some other base Activity like one of the Sherlock* Activities from ActionBar Sherlock. In such cases, you can replicate the functionality of `AbstractAppPauseActivity` in your Activities. Take a look at the source for `AbstractAppPauseActivity`.
 
 Just remember that you need to perform these steps in __every `Activity` in your app__.
 
