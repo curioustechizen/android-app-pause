@@ -1,6 +1,6 @@
 package com.github.curioustechizen.apppause.sample;
 
-import com.github.curioustechizen.android.apppause.AbstractAppActiveService;
+
 import com.github.curioustechizen.android.apppause.AbstractAppPauseActivity;
 
 import android.content.Context;
@@ -37,10 +37,6 @@ public class SampleAppPauseBaseActivity extends AbstractAppPauseActivity{
                 mContext.startActivity(new Intent(mContext, activityClazz));
             }
         });
-    }
-    
-    @Override
-    protected Class<? extends AbstractAppActiveService> getAppActiveServiceClass() {
-        return SampleAppActiveService.class;
+
     }
 }

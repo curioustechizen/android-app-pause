@@ -1,9 +1,10 @@
 package com.github.curioustechizen.android.apppause;
 
 import android.app.Application;
+import android.util.Log;
 
 /**
- * This abstract {@code Application} must be extended for the android-app-pause library to function properly.
+ * This abstract {@code Application} must be extended for the android-app-pause library to function.
  * Also, the implementation class must be registered in the AndroidManifest.xml  
  *
  */
@@ -23,10 +24,16 @@ public abstract class AbstractAppPauseApplication extends Application {
             this.onAppResume();
         }
         mBoundCount ++;
+        if(BuildConfig.DEBUG){
+            Log.d("android-app-pause", "mBoundCount incremented to "+mBoundCount);
+        }
     }
     
     protected void unbind(){
         mBoundCount --;
+        if(BuildConfig.DEBUG){
+            Log.d("android-app-pause", "mBoundCount decremented to "+mBoundCount);
+        }
         if(mBoundCount == 0){
             this.onAppPause();
         }

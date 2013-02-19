@@ -4,6 +4,7 @@ package com.github.curioustechizen.android.apppause;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 
 /**
  * Base {@code Activity} for the android-app-pause library. Every Activity in
@@ -62,17 +63,22 @@ public abstract class AbstractAppPauseActivity extends FragmentActivity {
 
         /*
          * The following code is only required to be executed if device
-         * rotations should NOT be treated as app pauses. 
+         * rotations should NOT be treated as app pauses (this is the default behaviour. 
          * 
          * It checks to see if the onStop() is being called because of an orientation change. 
          * If so, it does NOT perform the unbind.
          */
-        if (isChangingConfigurations()) {
-            int changingConfig = getChangingConfigurations();
-            if ((changingConfig & ActivityInfo.CONFIG_ORIENTATION) == ActivityInfo.CONFIG_ORIENTATION) {
-                mRotated = true;
-            }
+
+        // if (isChangingConfigurations()) {
+        int changingConfig = getChangingConfigurations();
+        if (BuildConfig.DEBUG) {
+            Log.d("android-app-pause",
+                    String.format("Changing Config: %d", changingConfig));
         }
+        if ((changingConfig & ActivityInfo.CONFIG_ORIENTATION) == ActivityInfo.CONFIG_ORIENTATION) {
+            mRotated = true;
+        }
+        // }
         if (!mRotated) {
             mApplication.unbind();
         }
