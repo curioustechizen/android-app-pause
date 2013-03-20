@@ -49,17 +49,13 @@
 
 <p>Note that when a user is using your app, if the device orientation is changed, the user can be considered to be continuing viewing your app. Thus, in general, device orientation changes should <strong>not</strong> be treated as app pause events.</p>
 
-<h2>ChangeLog</h2>
-
-<p>Please see <code>CHANGELOG.md</code> in the project root to see a complete ChangeLog</p>
-
 <h2>New in v2.0</h2>
 
 <p>v1.0 of this library did not take into account the device rotations. Hence, when you rotated the device, <code>onStop()</code> would be called on all the activities, all clients would "un-bind", and your <code>onAppPause()</code> would be called followed by <code>onAppResume()</code>.</p>
 
 <p>v2.0 takes device rotations into account. By default, device rotations <strong>do not</strong> trigger app pause events. This behavior can be altered using the <code>setTreatRotationAsAppPause(boolean)</code> method.</p>
 
-<p>See the Appendices at the end of this document for more details regarding the API and implementation changes.</p>
+<p>See the Appendices at the end of this README for more details regarding the API and implementation changes.</p>
 
 <h2>How to Use</h2>
 
@@ -101,7 +97,7 @@
 
 <h2>Contributing</h2>
 
-<p>If you want to improve this library, fork away. Pull requests are welcome. The appendices at the end of this document contain information for library developers.</p>
+<p>If you want to improve this library, fork away. Pull requests are welcome. The appendices at the end of this README contain information for library developers.</p>
 
 <h2>Why is this a Library Project?</h2>
 
@@ -173,7 +169,17 @@ limitations under the License.
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39455420-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
