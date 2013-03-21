@@ -37,6 +37,11 @@ For more details including implementation information and tips for contributors,
 If you want to improve this library, fork away. Pull requests are welcome.
 
 
+##Who uses this?
+If you are using this library in your app, please be kind enough to add your app to the list [here](https://github.com/curioustechizen/android-app-pause/wiki/Apps-using-android-app-pause).
+
+
+
 ###License
 
  
