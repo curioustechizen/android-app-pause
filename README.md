@@ -37,6 +37,10 @@ For more details including implementation information and tips for contributors,
 If you want to improve this library, fork away. Pull requests are welcome.
 
 
+##Credits
+The sample project uses [AndroidAsync](https://github.com/koush/AndroidAsync) library by Koushik Dutta for running an HTTP Server.
+
+
 ###License
 
  

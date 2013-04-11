@@ -10,5 +10,6 @@
     <string name="activity_main">Main Activity</string>
     <string name="activity_settings">Settings Activity</string>
     <string name="activity_detail">Details Activity</string>
+    <string name="request_info_placeholder">Make an HTTP request to see info here</string>
 
 </resources>
