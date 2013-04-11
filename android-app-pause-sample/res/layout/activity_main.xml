@@ -3,15 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" 
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="15"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/tvActivityName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" 
+        android:layout_height="0dp"
+        android:layout_weight="10"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"/>
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"/>
 
     <Button
         android:id="@+id/btnNext"
@@ -19,6 +23,13 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_next" 
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
